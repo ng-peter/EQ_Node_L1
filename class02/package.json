@@ -1,0 +1,16 @@
+{
+  "name": "class02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "underscore": "^1.8.3"
+  },
+  "scripts": {
+    "start": "node index",
+    "test": "node test"
+  },
+  "author": "",
+  "license": "ISC"
+}
