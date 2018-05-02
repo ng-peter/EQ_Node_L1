@@ -1,0 +1,2 @@
+Text from inside test.txt
+Oh Common!
