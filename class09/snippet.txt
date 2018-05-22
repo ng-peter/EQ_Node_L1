@@ -1,0 +1,38 @@
+
+
+var folder = {
+    _id: 'folder1', //ObjectID - auto assigned if not defined
+    name: 'folder1',
+    title: 'folder1 title',
+    description: 'bunch of files',
+    date: '2018-05-15'
+}
+
+var file1 = {
+    _id: 'folder1_FUCK_NO.jpg',
+    filename: 'FUCK_NO.jpg',
+    folder: 'folder1',
+    description: 'fuck no cat',
+    date: '2018-05-15'
+}
+var file2 = {
+    _id: 'folder1_file2.txt',
+    filename: 'file2.txt',
+    folder: 'folder1',
+    description: 'file 2',
+    date: '2018-05-18'
+}
+var file3 = {
+    _id: 'folder1_file3.txt',
+    filename: 'file3.txt',
+    folder: 'folder1',
+    description: 'file 3',
+    date: '2018-05-20'
+}
+var file4 = {
+    //_id: 'folder1_file3.txt',
+    filename: 'file4.txt',
+    folder: 'folder1',
+    description: 'file 4',
+    date: '2018-05-22'
+}
