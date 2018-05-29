@@ -1,0 +1,260 @@
+
+
+windows:
+
+loop.bat
+:loop
+node random.js
+goto loop
+:end
+
+error channel into normal channel
+2>&1
+
+
+wintee
+WinLAFS wtee.exe
+
+node random.js 2>&1 | wtee -a random.logs
+
+leave cmd prompt open
+log in and out and it's find
+
+
+
+
+
+
+
+
+
+mac:
+
+while true
+do
+node simple.js
+done
+
+node random.js >> random.logs 2>&1
+node random.js 2>&1 | tee -a random.logs
+
+
+
+while true
+do
+node random.js 2>&1 | tee -a random.logs
+done
+
+
+
+
+
+
+
+
+
+ssh remote
+logout or close machine - will lose access to that window
+
+screen
+
+detach:
+Ctrl+A Ctrl+D
+
+screen -r
+
+exit
+
+to view in process list:
+ps ax | grep screen
+
+
+
+------------------------------------------------------------
+
+----------
+
+if (node using too much memory) kill and restart it
+
+pgrep -n node
+pgrep -n -f "node random.js"
+ps ax | grep 1807
+
+px wux 1807
+-RSS (resident memory size)
+
+px wux 1807 | awk 'NR>1'
+skip first line
+
+px wux 1807 | awk 'NR>1' | awk '{print $6}'
+
+----------
+
+windows > services
+
+run scripts as services
+
+create package.json
+node_modules\.bin\windser.cmd gets created in the bin folder
+
+npm install winser
+scripts: 'start' : 'node random.js'
+
+node_modules\.bin\windser -i
+run cmd as admin
+
+NSSM - non sucking service manager - LOL
+
+------------------------------------------------------------
+
+
+
+
+Multi-core serving
+
+node trivial_server 8081 &
+& - run as a background task
+
+jobs
+see running jobs
+
+kill %1 %2 %3
+
+
+
+problems:
+internal
+MemoryStore obj
+
+load data from:
+memcached
+instead, to pool all data together
+
+
+
+make sure the exe is inside a path
+install as a service
+memcached -d install (daemon)
+run as admin
+PATH=%PATH%;c:\users\downloads or whatever
+then
+memcached -d install
+memcached -d uninstall
+
+configure mem and port
+regedit
+
+HK_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\memcached
+ImagePath
+add:
+-p 12321 -m 25
+(25 mb of memory will be used)
+
+
+
+FOR OSX:
+
+homebrew:
+brew install memcached
+
+https://memcached.org/
+and
+http://libevent.org/
+
+configure
+make
+make install
+
+sudo memcached -d -u daemon -p 12321 -m 25
+
+ps ax | grep memcached
+
+
+
+update server to use memcached instead of a local MemoryStore
+npm install connect-memcached
+
+brew services restart memcached
+
+
+
+------------------------------------------------------------
+
+
+multiple hosts
+
+express-vhost
+was part of express but is now independant
+
+
+curl -X GET -H "Host: app3" localhost:4200
+
+sudo  emacs /etc/hosts
+
+dir \windows\system32\drivers\etc\hosts
+notepad \windows\system32\drivers\etc\hosts
+
+add
+127.0.0.1   app1
+
+run as admin
+
+clean hosts otherwise hostname lookup will be super slow if huge
+
+
+
+
+------------------------------------------------------------
+
+
+https
+node has it built right in
+however need to run some keys
+
+openssl genrsa -out privkey.pem 1024
+openssl req -new -key privkey.pem -out certreq.csr
+openssl x509 -req -days 3650 -in certreq.csr -signkey privkey.pem -out newcert.pem
+
+use safari or something else to check the certificate
+
+
+openssl.exe
+
+
+
+
+
+------------------------------------------------------------
+
+
+
+
+express server 8081
+
+proxy server 443 / 8443 -->
+
+
+
+
+------------------------------------------------------------
+
+
+heroku login
+
+heroku create
+
+git init
+git commit -a
+
+heroku push APPNAME master
+
+git push heroku master
+
+heroku open -a enigmatic-bastion-49670
+heroku logs -a enigmatic-bastion-49670
+
+
+
+
+
+
