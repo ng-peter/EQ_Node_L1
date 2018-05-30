@@ -241,8 +241,25 @@ proxy server 443 / 8443 -->
 
 
 optional files:
+
+
 app.json (what to run)
+CONTENT:
+{
+	"name": "node.js on heroku test",
+	"description": "testing a bare express app"
+}
+
+
 Profile (name and desscription)
+CONTENT:
+web: node server.js
+
+
+
+
+
+
 
 
 npm init
