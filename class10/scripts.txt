@@ -238,6 +238,32 @@ proxy server 443 / 8443 -->
 
 ------------------------------------------------------------
 
+for some reason I couldn't push that heroku folder to github,
+so here's the raw data:
+
+
+make sure there is a package.json
+and have your dependencies correctly in there
+for example: express (in our case)
+
+
+server.js:
+(most important part is to change the port to process.env.PORT)
+var express = require('express');
+
+var app = express();
+
+app.get('*', (req, res) => {
+	console.log('request logged');
+	res.end('worked!');
+});
+
+app.listen(process.env.PORT);
+
+
+
+
+
 
 
 optional files:
