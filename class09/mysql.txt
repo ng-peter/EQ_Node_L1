@@ -1,0 +1,28 @@
+path from program files
+mysql -u root -p
+
+EQdawson4NODE
+
+2018-05-22T19:13:29.659244Z 1 [Note] A temporary password is generated for root@localhost: SYMp1#lbdk=D
+
+sudo /usr/local/mysql/bin/mysqld_safe --user=mysql
+
+ctlr+z
+bg
+
+to stop and background it
+
+
+
+/usr/local/mysql/bin/mysql -u root -p
+
+show databases;
+
+use folderapp
+show tables
+select * from files
+describe files
+
+
+
+

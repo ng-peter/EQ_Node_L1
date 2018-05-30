@@ -1,0 +1,65 @@
+
+path from program files
+mongod.exe --dbpath data\
+
+mongo.exe
+
+show dbs
+
+control-D to exit
+
+
+
+== FOR PC ==
+
+del /q /s data\
+rmdir /q /q data
+mkdir data
+
+start .
+
+
+== FOR MAC ==
+
+rm -fr data/
+mkdir data
+
+rm -fr data/ && mkdir data && mongodb-osx-x86_64-3.6.4/bin/mongod -dbpath data/
+mongodb-osx-x86_64-3.6.4/bin/mongo
+
+show dbs
+
+use folder_app
+
+show tables
+
+db.files.find()
+
+db.files.insertOne()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

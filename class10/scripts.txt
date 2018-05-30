@@ -95,12 +95,12 @@ windows > services
 run scripts as services
 
 create package.json
-node_modules\.bin\windser.cmd gets created in the bin folder
+node_modules\.bin\winser.cmd gets created in the bin folder
 
 npm install winser
 scripts: 'start' : 'node random.js'
 
-node_modules\.bin\windser -i
+node_modules\.bin\winser -i
 run cmd as admin
 
 NSSM - non sucking service manager - LOL
@@ -238,6 +238,14 @@ proxy server 443 / 8443 -->
 
 ------------------------------------------------------------
 
+
+
+optional files:
+app.json (what to run)
+Profile (name and desscription)
+
+
+npm init
 
 heroku login
 
